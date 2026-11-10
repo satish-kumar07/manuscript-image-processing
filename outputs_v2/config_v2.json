@@ -1,0 +1,15 @@
+{
+  "patch": 256,
+  "base_ch": 32,
+  "epochs_run": 20,
+  "best_val_f1": 0.9088962869122276,
+  "lr": 0.001,
+  "batch": 8,
+  "patches_per_epoch": 4000,
+  "seed": 42,
+  "train_patches": 6859,
+  "val_patches": 239,
+  "test_patches": 266,
+  "test_pages": 23,
+  "val_pages": 26
+}

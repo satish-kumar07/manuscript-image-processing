@@ -1,0 +1,11 @@
+# Dataset is too large for a regular GitHub repository.
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/

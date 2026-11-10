@@ -1,0 +1,7 @@
+dataset,role,input_dir,gt_dir,n_pairs,unmatched,note
+DIBCOSETS-target-2018,extra_heldout,DIBCOSETS-target-2018\test\imgs,DIBCOSETS-target-2018\test\gt_imgs,10,0,
+DIBCOSETS-target-2018,extra_heldout,DIBCOSETS-target-2018\train\imgs,DIBCOSETS-target-2018\train\gt_imgs,125,0,
+DIBCOSETS-target-2018,extra_heldout,DIBCOSETS-target-2018\val\imgs,DIBCOSETS-target-2018\val\gt_imgs,31,0,
+Restomer_data,test,Restomer_data\test,Restomer_data\test_gt,266,0,
+Restomer_data,train,Restomer_data\train,Restomer_data\train_gt,10449,0,
+Restomer_data,val,Restomer_data\valid,Restomer_data\valid_gt,256,0,

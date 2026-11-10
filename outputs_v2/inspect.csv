@@ -1,0 +1,8 @@
+group,sampled,top_size,gt_binary,size_mismatch,text_ratio
+DIBCO / none,40,"(688, 1925)",40/40,0/40,0.08
+DIBCOSETS-target-2018 / test,10,"(582, 2544)",10/10,0/10,0.083
+DIBCOSETS-target-2018 / train,40,"(687, 787)",40/40,0/40,0.074
+DIBCOSETS-target-2018 / val,31,"(509, 5759)",31/31,0/31,0.068
+Restomer_data / test,40,"(256, 256)",40/40,0/40,0.081
+Restomer_data / train,40,"(384, 384)",40/40,0/40,0.043
+Restomer_data / val,40,"(256, 256)",40/40,0/40,0.047
