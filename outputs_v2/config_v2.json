@@ -2,7 +2,7 @@
   "patch": 256,
   "base_ch": 32,
   "epochs_run": 20,
-  "best_val_f1": 0.9088962869122276,
+  "best_val_f1": 0.907797622189954,
   "lr": 0.001,
   "batch": 8,
   "patches_per_epoch": 4000,
