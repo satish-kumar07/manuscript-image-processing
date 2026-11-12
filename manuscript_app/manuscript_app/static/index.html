@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manuscript Cleaner – bring faded, stained pages back to life</title>
+  <meta name="description" content="Upload an old manuscript page. An AI removes stains, yellowing and ink bleed and gives you a clean black-and-white page.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#home" aria-label="Manuscript Cleaner, home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="5" y="3" width="22" height="26" rx="3" fill="currentColor" opacity=".15"/><path d="M10 10h12M10 15h12M10 20h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>Manuscript Cleaner</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#problem">The problem</a>
+      <a href="#how">How it works</a>
+      <a href="#results">Results</a>
+      <a href="#try" class="nav-cta">Try it</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <span id="status" class="pill" role="status" aria-live="polite">Checking…</span>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">AI for historical documents</p>
+        <h1>Bring faded, stained pages back to life</h1>
+        <p class="lead">Upload a photo or scan of an old manuscript. Our AI removes stains, yellowing and ink bleed, and gives you a <strong>clean black-and-white page</strong> that is easy to read, print and search.</p>
+        <div class="actions">
+          <a class="btn primary" href="#try">Try it with your own page</a>
+          <a class="btn ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="ticks">
+          <li>No sign-up, nothing to install for visitors</li>
+          <li>Your picture is not saved</li>
+          <li>Works on handwriting and print</li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mini-page before"><span class="stain s1"></span><span class="stain s2"></span><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="arrow">→</div>
+        <div class="mini-page after"><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="cap"><span>Before: stained &amp; yellow</span><span>After: clean &amp; clear</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="section">
+    <div class="wrap">
+      <h2>Why are old pages so hard to read?</h2>
+      <p class="sub">Time is not kind to paper. Three things make old writing difficult for people <em>and</em> for computers.</p>
+      <div class="cards three">
+        <article class="card"><div class="ico stain-ico" aria-hidden="true"></div><h3>Stains</h3><p>Water, mould and coffee leave dark patches. To a computer, a dark patch looks just like ink.</p></article>
+        <article class="card"><div class="ico yellow-ico" aria-hidden="true"></div><h3>Yellowing</h3><p>Paper turns brown with age, so there is less difference between the page and the writing.</p></article>
+        <article class="card"><div class="ico bleed-ico" aria-hidden="true"></div><h3>Ink bleed-through</h3><p>Ink soaks through from the other side of the page, so writing appears that was never meant to be there.</p></article>
+      </div>
+      <div class="callout">
+        <h3>Our one job</h3>
+        <p>For every tiny dot of the picture, decide: <strong>“Is this ink, or is it just a stain?”</strong> Everything that is not ink becomes clean white paper. The result is called a <em>binary</em> (black-and-white) page, and it is what text-reading software (OCR) needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section alt">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="sub">Five simple steps. You only do the first one.</p>
+      <ol class="steps">
+        <li><span class="num">1</span><div><h3>You upload a page</h3><p>A photo or scan of the manuscript, as PNG, JPG, BMP, TIFF or WEBP.</p></div></li>
+        <li><span class="num">2</span><div><h3>The page is cut into small tiles</h3><p>The picture is split into small overlapping squares (256 × 256 dots), like reading the page through a little window that slides across it.</p></div></li>
+        <li><span class="num">3</span><div><h3>The AI marks the ink</h3><p>For each tile, the AI colours in what it believes is real ink. It learned to do this by studying thousands of example tiles where experts had already traced the true ink by hand.</p></div></li>
+        <li><span class="num">4</span><div><h3>The tiles are stitched back together</h3><p>The tiles overlap and are blended smoothly, so you see one clean page with no seams: black ink on white paper.</p></div></li>
+        <li><span class="num">5</span><div><h3>Optional: read the text</h3><p>Text-reading software (OCR) finds it much easier to read the cleaned page than the stained original. You can compare both in the demo below.</p></div></li>
+      </ol>
+
+      <div class="why">
+        <h3>Why not just use a simple filter?</h3>
+        <div class="cards three">
+          <article class="card"><h4>Simple filter</h4><p>Picks <em>one</em> brightness for the whole page: darker than that is ink. But stains are dark too, so they turn into black blotches.</p></article>
+          <article class="card"><h4>Local filter</h4><p>Picks a separate brightness for each neighbourhood. Better, but still fooled by dark patches and uneven paper.</p></article>
+          <article class="card highlight"><h4>AI cleaner</h4><p>Looks at the <em>shape</em> of the strokes, not only the darkness. That is how it tells handwriting from a stain. You can see all three in the demo.</p></article>
+        </div>
+      </div>
+
+      <details class="tech">
+        <summary>For the curious: the technical details</summary>
+        <ul>
+          <li><strong>Model:</strong> a U-Net (a type of convolutional neural network) with about 8 million adjustable numbers, written in PyTorch.</li>
+          <li><strong>Training data:</strong> 6,859 image patches cut from real historical documents of the DIBCO benchmark, each with an expert’s hand-traced answer. Random crops, flips, rotations, brightness changes, yellowing, stains and noise were added during training.</li>
+          <li><strong>Learning rule:</strong> a loss that combines pixel-by-pixel error (BCE) with a Dice term, because ink covers only a few percent of a page.</li>
+          <li><strong>Fair testing:</strong> 23 whole pages were kept hidden from the model. Any training patch that came from those pages was removed, so the model never saw them.</li>
+          <li><strong>Comparison methods:</strong> Otsu’s global threshold and Sauvola’s local threshold, the two most common classic approaches.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="section">
+    <div class="wrap">
+      <h2>How well does it work?</h2>
+      <p class="sub">We tested it on <strong id="pagesTested">23</strong> pages it had never seen and compared its answers with the experts’ hand-traced versions.</p>
+
+      <div class="cards three stats">
+        <article class="card stat"><div class="big" id="bigF1">0.85</div><p><strong>Score out of 1.00.</strong> 1.00 would mean a perfect match with the expert. The two classic filters score 0.57 and 0.68.</p></article>
+        <article class="card stat"><div class="big" id="bigBeat">23 of 23</div><p><strong>Pages where the AI beat the local filter.</strong> It also beat the simple filter on 20 of 23.</p></article>
+        <article class="card stat"><div class="big" id="bigOcr">46% → 23%</div><p><strong>Reading mistakes.</strong> Typical share of characters that text-reading software got wrong, before and after cleaning (14 pages).</p></article>
+      </div>
+
+      <div class="charts">
+        <figure class="chart"><figcaption>Matching score (higher is better)</figcaption><div id="chartF1"></div><p class="small">Thin lines show the likely range, because only 23 pages were tested.</p></figure>
+        <figure class="chart"><figcaption>Reading mistakes after text recognition (lower is better)</figcaption><div id="chartOcr"></div><p class="small">Based on 14 pages with enough text to measure. A small sample, so treat it as encouraging, not final.</p></figure>
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h3>Where it works well</h3>
+          <ul class="list"><li>Pages with stains, yellowing or faded ink</li><li>Handwriting and printed text at a normal scan size</li><li>Removing the dark blotches that fool simple filters</li></ul>
+        </div>
+        <div class="card warn">
+          <h3>Where it still struggles</h3>
+          <ul class="list"><li>Dark scan borders or shadows at the page edge can be mistaken for ink</li><li>Very faint ink can be missed</li><li>Strong bleed-through can leave some ghost strokes</li><li>Handwriting stays hard for OCR, even on a clean page</li></ul>
+        </div>
+      </div>
+      <p class="small note">Why not quote “98% accuracy”? Most of a page is blank paper, so even a model that finds no ink at all would score about 94%. That is why we use the matching score instead.</p>
+    </div>
+  </section>
+
+  <!-- TRY IT -->
+  <section id="try" class="section alt">
+    <div class="wrap">
+      <h2>Try it yourself</h2>
+      <p class="sub">Choose a sample page or upload your own. It takes a few seconds.</p>
+
+      <div id="modelWarning" class="alert error" role="alert" hidden></div>
+
+      <div class="try-grid">
+        <div class="panel">
+          <h3>1. Pick a page</h3>
+          <div id="drop" class="drop" tabindex="0" role="button" aria-label="Choose or drop a picture">
+            <input id="fileInput" type="file" accept="image/png,image/jpeg,image/bmp,image/tiff,image/webp" hidden>
+            <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><path d="M24 32V12M24 12l-8 8M24 12l8 8M10 36h28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p><strong>Click to choose</strong> or drag a picture here<br><span class="small">You can also paste with Ctrl+V. PNG, JPG, BMP, TIFF or WEBP, up to <span id="maxMb">20</span> MB.</span></p>
+          </div>
+          <div id="picked" class="picked" hidden>
+            <img id="pickedThumb" alt="Your chosen page">
+            <div><strong id="pickedName"></strong><br><span id="pickedMeta" class="small"></span></div>
+            <button id="clearBtn" class="link" type="button">Remove</button>
+          </div>
+
+          <div id="samplesBox" hidden>
+            <p class="label">Or try a sample page</p>
+            <div id="samples" class="samples"></div>
+            <p id="sampleNote" class="small"></p>
+          </div>
+
+          <h3>2. Options</h3>
+          <label class="check"><input id="ocrBox" type="checkbox"> <span>Also read the text (OCR) and compare <span class="small" id="ocrHint"></span></span></label>
+
+          <button id="runBtn" class="btn primary wide" type="button" disabled>Clean my page</button>
+          <p class="small tips"><strong>Tips:</strong> use a flat, well-lit scan where the writing is easy to see. Tiny text in a huge photo works less well. Your picture is processed in memory and is not saved.</p>
+        </div>
+
+        <div class="panel result-panel">
+          <h3>3. Your result</h3>
+          <div id="empty" class="empty"><p>Your cleaned page will appear here.</p></div>
+          <div id="busy" class="busy" hidden><div class="spinner" aria-hidden="true"></div><p id="busyText">Cleaning… large pages can take a little while.</p></div>
+          <div id="error" class="alert error" role="alert" hidden></div>
+
+          <div id="result" hidden>
+            <div id="notes"></div>
+            <div class="tabs" role="tablist" aria-label="Choose what to compare with the original">
+              <button role="tab" data-tab="ai" class="tab on" aria-selected="true">AI cleaned</button>
+              <button role="tab" data-tab="otsu" class="tab" aria-selected="false">Simple filter</button>
+              <button role="tab" data-tab="sauvola" class="tab" aria-selected="false">Local filter</button>
+              <button role="tab" data-tab="truth" class="tab" aria-selected="false" id="truthTab" hidden>Expert answer</button>
+            </div>
+            <div id="compare" class="compare">
+              <img id="cmpAfter" alt="Cleaned page">
+              <img id="cmpBefore" class="before" alt="Original page">
+              <span class="tag left">Original</span><span class="tag right" id="afterTag">AI cleaned</span>
+              <span class="handle" aria-hidden="true"></span>
+              <input id="cmpRange" type="range" min="0" max="100" value="50" aria-label="Slide to compare the original and the cleaned page">
+            </div>
+            <p class="small">Drag the slider left and right to compare. Use the tabs to see what the simple filters would have produced.</p>
+
+            <div id="statGrid" class="stat-grid"></div>
+            <p id="verdict" class="verdict"></p>
+            <div class="actions"><a id="dlBtn" class="btn primary" download="cleaned.png">Download the cleaned page</a></div>
+
+            <div id="ocrOut" class="ocr" hidden>
+              <h4>What the text-reading software sees</h4>
+              <div class="two">
+                <div><p class="label">On the original page</p><pre id="ocrOrig"></pre></div>
+                <div><p class="label">On the cleaned page</p><pre id="ocrClean"></pre><button id="copyBtn" class="link" type="button">Copy this text</button></div>
+              </div>
+              <p class="small">OCR works best on printed text. Handwriting is difficult for any OCR, even after cleaning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="wrap narrow">
+      <h2>Questions people ask</h2>
+      <details><summary>Is my picture stored or shared?</summary><p>No. The picture is processed in the computer’s memory and thrown away as soon as the result is sent back. Nothing is written to disk.</p></details>
+      <details><summary>Which pictures work best?</summary><p>Flat, well-lit scans or photos of handwritten or printed pages, where the writing is clearly visible and not tiny. Very large pictures are shrunk automatically so they finish quickly.</p></details>
+      <details><summary>Why did it miss some faint writing?</summary><p>Very faded ink looks almost the same as the paper, and the AI plays it safe. In our tests this was one of its main weak spots.</p></details>
+      <details><summary>Why is there a dark edge on my result?</summary><p>Dark scan borders and shadows at the page edge can be mistaken for ink. Cropping the picture to the page before uploading usually helps.</p></details>
+      <details><summary>Can it read handwriting?</summary><p>The cleaning works on handwriting, but standard text-reading software (OCR) is built for printed text, so handwritten results stay rough. Cleaning still helps.</p></details>
+      <details><summary>How long does it take?</summary><p>A few seconds on a computer with a modern graphics card (GPU), and longer on a normal processor, especially for big pages.</p></details>
+      <details><summary>What is DIBCO?</summary><p>A well-known set of historical document images used by researchers to compare binarization methods. Each page comes with an expert’s hand-traced answer, which is what makes training and fair testing possible.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Manuscript Cleaner</strong> – a deep-learning project: a U-Net in PyTorch trained on DIBCO benchmark data to clean historical manuscripts for OCR.</p>
+    <p class="small">Results shown are from the final training run, tested on 23 held-out pages. Results on your own pages can differ.</p>
+  </div>
+</footer>
+
+<script src="/js/app.js" defer></script>
+</body>
+</html>

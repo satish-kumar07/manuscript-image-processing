@@ -1,0 +1,9 @@
+# PyTorch is NOT listed on purpose: install the build that matches your GPU (you already have torch 2.14.1+cu130).
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+numpy>=1.24
+opencv-python-headless>=4.8
+scikit-image>=0.22
+pandas>=2.0            # only used by tools/make_samples.py
+pytesseract>=0.3.10    # optional: shows the "read the text" (OCR) panel; also needs the Tesseract program installed
